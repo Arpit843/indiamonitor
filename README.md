@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+ 
 # India Monitor 🇮🇳
 
 **National Intelligence Dashboard** — A real-time geospatial monitoring platform for tracking events, conditions, and data streams across India.
 
----
+
 
 ## Project Structure
 
@@ -279,4 +279,4 @@ Future expansions may include predictive analytics, automated situation summarie
 🎯 Project Vision
 
 India Monitor aims to become a comprehensive real-time situational awareness dashboard for India, combining geospatial visualization, public data integration, and modular analytics tools to provide a clear understanding of national conditions.
->>>>>>> 3ee26511aeaa5fc4cf17d842dcf20d2c5a422e6c
+
