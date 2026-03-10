@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+  background: #050C1A;
+  color: #D0E8FF;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #0C1829; }
+::-webkit-scrollbar-thumb { background: #1E3A5F; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #2A5080; }
+
+/* ── Custom keyframes ────────────────────────────── */
+@keyframes blink   { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
+@keyframes ripple  { 0% { transform: scale(1); opacity: .8 } 100% { transform: scale(3); opacity: 0 } }
+@keyframes ticker  { 0% { transform: translateX(100%) } 100% { transform: translateX(-100%) } }
+@keyframes slideIn { from { opacity: 0; transform: translateY(-6px) } to { opacity: 1; transform: translateY(0) } }
+
+/* ── Utility classes ─────────────────────────────── */
+.blink        { animation: blink   1s infinite; }
+.ripple-ring  { animation: ripple  2s ease-out infinite; }
+.ticker-text  { display: inline-block; animation: ticker 40s linear infinite; }
+.panel-enter  { animation: slideIn .3s ease forwards; }
+
+/* ── Map paths ───────────────────────────────────── */
+.state-path {
+  transition: fill 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+.state-path:hover { opacity: 0.85; filter: brightness(1.3); }
+
+/* ── Interactive elements ────────────────────────── */
+.clickable { cursor: pointer; transition: all 0.15s ease; }
+.clickable:hover  { filter: brightness(1.15); }
+.clickable:active { filter: brightness(0.9); transform: scale(0.98); }
+
+.panel-tab { cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
+.panel-tab:hover  { background: rgba(30, 58, 95, 0.7) !important; }
+
+.region-btn {
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid #1E3A5F;
+}
+.region-btn:hover { border-color: #3B82F6 !important; }
+.region-btn.active {
+  border-color: #F59E0B !important;
+  background: rgba(245, 158, 11, 0.08) !important;
+}
+
+.geo-btn { cursor: pointer; transition: all 0.15s ease; }
+.geo-btn:hover { background: rgba(30, 58, 95, 0.8) !important; }
+.geo-btn.active {
+  background: rgba(22, 163, 74, 0.15) !important;
+  border-color: #16A34A !important;
+}
+
+.event-item { transition: background 0.15s ease; }
+.event-item:hover { background: rgba(30, 58, 95, 0.5) !important; }
+
+.layer-toggle { cursor: pointer; transition: opacity 0.15s ease; }
+.layer-toggle:hover { opacity: 0.85; }
+
+/* ── Map tooltip ─────────────────────────────────── */
+.map-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(5, 20, 50, 0.95);
+  border: 1px solid #1E4D8C;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #94C5FF;
+  z-index: 100;
+  white-space: nowrap;
+}
